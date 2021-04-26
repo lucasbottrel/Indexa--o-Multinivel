@@ -14,13 +14,13 @@ public class Indexacao_multinivel {
     public static void titulo(){
         System.out.println("|-------- INDEXAÇÃO MULTINIVEL --------|\n             desenvolvido por Lucas Bottrel Lopes de Moura durante a disciplina de Banco de Dados\n");
 
-        System.out.println("Esse programa leva como base a seguinte estrutura:\n    - Indices primários usando indices multiniveis estáticos\n    - Indices secundários usando indices multiniveis dinâmicos com árvore B+\n\n");
+        System.out.println("Esse programa leva como base a seguinte estrutura:\n    - Indices primários usando indices multiniveis estáticos\n    - Indices secundários usando indices multiniveis dinâmicos com árvore B+");
 
     }
 
     public static void calculoIndicePrimario(){
         
-        System.out.print("Digite o numero de registros da tabela: ");
+        System.out.print("\n\nDigite o numero de registros da tabela: ");
         int numReg = leitor.nextInt();
 
         System.out.print("Digite o tamanho do registro (em B): ");
@@ -68,11 +68,15 @@ public class Indexacao_multinivel {
     public static void main(String[] args) {
         
         titulo();
-        
-        calculoIndicePrimario();
-        //calculoIndiceSecundario();
+        String continuar = "S";
 
+        while (continuar.equals("S") || continuar.equals("s")){
+            calculoIndicePrimario();
+            //calculoIndiceSecundario();
 
+            System.out.print("\n\n -> DESEJA REALIZAR NOVO CALCULO (S/N)? : ");
+            continuar = leitor.next();
+        }
 
     }
 }
